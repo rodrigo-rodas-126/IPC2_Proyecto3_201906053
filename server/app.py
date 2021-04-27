@@ -8,12 +8,8 @@ app = Flask(__name__)
 UPLOAD_FOLDER = os.path.abspath("./uploads")
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
+
 """
-@app.route('/')
-def hello():
-    return render_template("index.html", text=str(vuelos))
-
-
 @app.route('/archivo', methods=['POST'])
 def select():
     nuevo_viaje={
@@ -25,9 +21,14 @@ def select():
     return jsonify({"peticion": vuelos})
 """
 
-@app.route('/', methods=["GET", 'POST'])
+@app.route('/inicio')
+def saludar():
+    return jsonify({'message': '10'})
+
+@app.route('/cargarArchivo', methods=['GET', 'POST'])
 def seleccionar():
     contenido = ''
+    eventos = []
     if request.method == "POST":
         f = request.files['ourfile']
         filename = f.filename
@@ -36,8 +37,16 @@ def seleccionar():
         archivo = open(direccion, encoding="utf-8")
         for lin in archivo:
             contenido += lin
+        return contenido
 
-    return render_template("index.html", text=str(contenido))
+@app.route('/prueba', methods=['GET', 'POST'])
+def nuevo():
+    if request.method == "POST":
+        nuevo_viaje={
+            "nombre": request.json['nombre'],
+            "hora": request.json['hora'],
+            "precio": request.json['precio']
+        }
 
 if __name__ == '__main__':
-    app.run(debug = True, port= 8000)
+    app.run(debug = True, port= 8800)
