@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/estilo.css">
+
+    <title>Factura</title>
+  </head>
+  
+  <body class="bg-dark">
+    <div class="container">
+
+      <div class="container align-items-center w-100">
+        <div class="container p-4 w-100">
+          <div class="container p-3 bg-light rounded">
+
+            
+            <input type="file" class="bg-primary p-2 rounded text-white">
+
+            <div class="btn-group btn-group-lg mb-4 mt-3" role="group" aria-label="Basic example">
+              <!--button id="archivo" type="button" class="btn btn-primary">Abrir Archivo</button-->
+              <button type="button" class="btn btn-danger">Filtrar</button>
+              <button id="ayuda" type="button" class="btn btn-warning">Ayuda</button>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <label class="form-label h4">Archivo de Entrada</label>
+                <p>
+                  {{ text }}
+                </p>
+              </div>
+              <div class="col">
+                <label class="form-label h4">Archivo de Salida</label>
+                <p>
+                  {{ text1 }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  ayuda.onclick = function(){
+    alert("201906053 \n Jose Rodrigo Rodas Palencia \n IPC2 - E")
+  }
+
+  archivo.onclick = function(){
+
+  }
+</script>
