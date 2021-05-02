@@ -6,6 +6,11 @@ class Evento:
         self.error = error
 
     def imprimir(self):
-        cadena = 'Fecha: '+ str(self.fecha) + ' Reportado por: ' + str(self.empleado) + ', Afectados: ' + str(self.afectados) + ', ' + str(self.error)
+        cadena = 'Evento = \nFecha: '+ str(self.fecha) + '\nReportado por: ' + str(self.empleado) + ',\nAfectados: ' + str(self.afectados) + ',\nError: ' + str(self.error.num) + ' - ' + str(self.error.name)
         print(cadena)
         return cadena
+
+class Error:
+    def __init__(self, num, name):
+        self.num = num
+        self.name = name
