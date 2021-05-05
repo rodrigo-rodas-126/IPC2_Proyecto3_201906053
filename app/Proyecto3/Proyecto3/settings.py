@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'Proyecto3.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/Rodrigo/Desktop/3er año/IPC2/Laboratorio/Proyect3/Proyect_3/app/Proyecto3/Proyecto3/plantillas'],
+        'DIRS': ['C:/Users/Humberto Morales/OneDrive/Escritorio/Rodrigo/app/Proyecto3/Proyecto3/plantillas'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -115,6 +116,12 @@ USE_TZ = True
 
 DEBUG = True
 
+CSRF_COOKIE_SECURE = False
+
+SESSION_COOKIE_SECURE = True
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
