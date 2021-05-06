@@ -20,6 +20,14 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cargar', views.inicio, name="home"),
-    path('home', views.home, name="inicio"),
+    path('inicio', views.inicio, name="inicio"),
+    path('', views.home, name="home"),
+    path('archivo', views.archivo, name="archivo"),
+    path('consulta', views.consultar, name="consulta"),
+    path('cargado', views.archivo2, name="cargado"),
+    path('reset', views.home1, name="reset"),
+    path('filtros', views.filtros, name="filtros"),
+    path('filtros1', views.filtros1, name="filtros1"),
+    path('filtros2', views.filtros2, name="filtros2"),
+    path('docu', views.docu, name="docu"),
 ]
