@@ -45,7 +45,7 @@ def seleccionar():
         return contenido
 """
 
-@app.route("/cargar", methods=['GET', 'POST'])
+@app.route("/cargar", methods=['POST'])
 def parse_xml():
     if request.method == "POST":
         retorno = ''
@@ -216,7 +216,7 @@ def grafico():
     return 'Funciona'
 """
 
-@app.route("/grafico_errores", methods=['GET', 'POST'])
+@app.route("/grafico_errores", methods=['POST'])
 def graf():
     if request.method == "POST":
         cod = request.form['codigo']
@@ -239,7 +239,7 @@ def graf():
         plt.show()
         return 'Grafica Realizada'
 
-@app.route("/graficar_fechas", methods=['GET', 'POST'])
+@app.route("/graficar_fechas", methods=['POST'])
 def frag():
     if request.method == "POST":
         date = request.form['fecha']
